@@ -1,0 +1,12 @@
+# Fichiers système (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# Dossiers de sortie de Lenia
+record/
+save/
+found/
+
+# Fichiers Python temporaires
+__pycache__/
+*.pyc
