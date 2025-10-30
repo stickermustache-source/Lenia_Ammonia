@@ -1,0 +1,46 @@
+{
+    "code": "QNVCXV<YV9CKQ",
+    "name": "",
+    "cname": "seed:C9EFB55A",
+    "settings": {},
+    "model": {
+        "R": 31,
+        "T": 1,
+        "P": 0,
+        "kn": 1,
+        "gn": 1
+    },
+    "params": [
+        {
+            "b": "1",
+            "m": 0.289,
+            "s": 0.0312,
+            "h": 0.22,
+            "r": 1,
+            "c0": 0,
+            "c1": 0,
+            "rings": [
+                {
+                    "r": 0.21,
+                    "w": 0.88,
+                    "b": 0.51
+                },
+                {
+                    "r": 0.1,
+                    "w": 0.72,
+                    "b": 0.14
+                },
+                {
+                    "r": 0.79,
+                    "w": 0.25,
+                    "b": 0.98
+                }
+            ]
+        }
+    ],
+    "cells": [
+        [
+            "12.AsDvCwUyI3yOyEwJuTsWqRH14.$10.NuX13yOvVtJrBL11.$9.sB17yOyEuOsHpNA8.$8.sO21yOvSsFU7.$7.qN24yOuHqI6.$7.yL25yOwRqU5.$6.uT27yOxPqN4.$5.qK29yOwNpI3.$5.tG10yOyAwXwBvLvPwMxQyN12yOtQD2.$4.ExK8yOyFwMsE5.pLuFxK12yOqP2.$4.K8yOxMsX2.KpHpLpAE2.rLwMyK10yOuWC.$4.rP7yOwV2.NrQtQvAvDtUtFrXqKUsRwMyD10yOpS.$3.CtV6yOxA2.OtK7yOuXsMtLvAwJxV9yOsL.$3.G6yOyE3.tH10yOwCvAuTvLxN8yOxG.$3.qV6yO3.qW12yOxQtQrQtFxR8yOB$2.BuC5yOyD3.yB13yOuQpF.tM8yOS$2.L6yO3.qK15yOpX2.yA7yOpB$2.pT6yO3.uT15yOqA2.wH7yOP$2.sK6yO3.7yO2yM7yOpT2.uI7yO.$.CuA5yOrK2.I7yO2yL7yOpM2.tT7yO.$.G6yOrE2.J16yOV2.vA6yOyK.$.qX6yOsB2.tL16yO3.xQ6yOvS.$.uD6yOuBD.qU16yO3.6yOyM2.$DyN6yOwXpA2.wW14yOqD3.6yOxX2.$pEyM2yN5yOpV2.pRxP13yO3.qA5yOyNtE2.$sByIvXyB5yOsQQ2.pNwT11yOsS3.6yOxX3.$3.tW6yOqJ4.tHxP8yOvS3.rG5yOyNtO3.$4.xA5yOwPqK5.tSxIyM3yOxWtS3.pKyM5yOxU4.$4.JxX5yOwEqWK4.MtEvUwKuP4.pIxH5yOyKrU4.$5.rNyH6yOrOqPO10.rBxQ6yOwW5.$6.sMyI6yOxLsDsGrLqWqRqNqKqJqRrRtP7yOxV6.$7.rOyB9yOxTxBwSwRxCyF8yOyCrC6.$8.TxE21yOyCtE7.$10.tUxX18yOxWsU8.$12.uSxU14yOyMxIpP9.$14.sAwUyD10yOxUvG11.$17.sRwQxSyHyMyNyKyCxKvI13.$20.RrFsBqS16.!"
+        ]
+    ]
+}
