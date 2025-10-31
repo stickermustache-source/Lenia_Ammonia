@@ -17,8 +17,7 @@ An extension of [Bert Chan's Lenia](https://github.com/Chakazul/Lenia) that simu
 > - Nutrient (green) and waste (red/purple) dynamics  
 > - Behavioral adaptation (rest/hunt/flee states)
 
-**[▶️ Watch Full Demo Video](https://youtube.com/...)**  
-**[🎮 Try Interactive Version](https://...)**
+**[ Watch Full Demo Video](https://youtu.be/wKBzmHFFQT4?si=AofKQiohAho3JYX9) 
 
 ---
 
