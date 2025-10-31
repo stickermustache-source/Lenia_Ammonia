@@ -255,7 +255,7 @@ This is shared as **open-source proof-of-concept** to:
 
 ##  License
 
-MIT License - See [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE.md](LICENSEmd) file for details.
 
 **Attribution:** This project builds upon Bert Chan's Lenia. Please cite both:
 - This project for the environmental extensions
