@@ -11,11 +11,9 @@ An extension of [Bert Chan's Lenia](https://github.com/Chakazul/Lenia) that simu
 ---
 
 ##  Demos
+![Enregistrement d’écran, le 2025-10-30 à 16 06 09-2](https://github.com/user-attachments/assets/9be9a778-f318-4484-b375-c274c5a373f2)
 
-> **TODO:** Add GIFs/videos here! Capture:
-> - Organisms swimming via thermal convection
-> - Nutrient (green) and waste (red/purple) dynamics  
-> - Behavioral adaptation (rest/hunt/flee states)
+![Lenia_Ammonia_Demo](https://github.com/user-attachments/assets/d598d11b-6069-4dbb-bbc5-43e2bc61e190)
 
 **[ Watch Full Demo Video](https://youtu.be/wKBzmHFFQT4?si=AofKQiohAho3JYX9) 
 
