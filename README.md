@@ -1,6 +1,6 @@
 #  Lenia Ammonia: Life in Alien Oceans
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -255,7 +255,7 @@ This is shared as **open-source proof-of-concept** to:
 
 ##  License
 
-MIT License - See [LICENSE.md](LICENSEmd) file for details.
+MIT License - See [LICENSE](LICENSE) file for details.
 
 **Attribution:** This project builds upon Bert Chan's Lenia. Please cite both:
 - This project for the environmental extensions
