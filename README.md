@@ -64,6 +64,16 @@ Standard Lenia is **"disembodied"**—organisms exist in abstract mathematical s
 - Bacterial chemotaxis
 
 ---
+##  Project Vision and My Role
+
+> **The Vision (The "Why"):**
+> This project stemmed from a curiosity for speculative exobiology. My objective was to explore an underexplored niche: the viability of cellular life in a liquid ammonia environment by adapting the existing Lenia simulation model.
+>
+> **My Role (The "How"):**
+> My primary role was that of project designer and lead. I defined the scientific objectives and directed an AI tool for the technical implementation. This process required a methodical approach:
+>
+> * **Strategic Piloting:** Breaking down the complex problem into small, manageable steps.
+> * **Quality Assurance (QA):** Diagnosing the AI's errors using a "detective approach" (analyzing the "expected state" vs. the "observed state") to guide the tool toward a functional solution.
 
 ##  Quick Start
 
