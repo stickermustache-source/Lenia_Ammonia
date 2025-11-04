@@ -36,7 +36,7 @@ v3.5.2 (add model)
     {code, name, cname, settings{}, model{R,T,P,kn,gn} params[{b,m,s,h,r,c[]}], cells["$%#"]}
 v3.6.0 LeniaF.py = free kernel (add free_h, adjust values T and h)
     {code, name, cname, settings{}, model{R,T*,P,kn,gn} params[{b,m,s,h*,r,c[]}], cells["$%#"]}
-v3.6.1 (add free_b, divide b into rings, separate c0 c1, e.g. 233o.json)
+v.3.6.1 (add free_b, divide b into rings, separate c0 c1, e.g. 233o.json)
     {code, name, cname, settings{}, model{R,T,P,kn,gn} params[{m,s,h,c0,c1,rings[{r,w,b}]}], cells["$%#"]}
 '''
 
@@ -183,7 +183,10 @@ class Board:
             return scipy.ndimage.gaussian_filter(field, sigma=diffusion_coef, mode='wrap')
         return field
     
-    def update_nutrients_and_waste(self, cell_density, dt=1.0, is_nutrients_enabled=True, is_waste_enabled=True):
+    # #################################################################
+    # # --- DÉBUT DU BLOC CORRIGÉ 1 ---
+    # #################################################################
+    def update_nutrients_and_waste(self, consuming_density, total_density, dt=1.0, is_nutrients_enabled=True, is_waste_enabled=True):
         """
         Update nutrient and waste fields based on organism metabolism
         Uses Monod kinetics for realistic nutrient limitation
@@ -207,13 +210,12 @@ class Board:
             # Monod kinetics: growth limited by nutrient availability
             nutrient_factor = self.nutrients / (K_NUTRIENT + self.nutrients)
             
-            # Consumption based on both cell presence and nutrient availability
-            consumption = CONSUMPTION_RATE * cell_density * nutrient_factor * dt
-            self.nutrients = np.clip(self.nutrients - consumption, 0.0, 1.5)
-            
+            # CORRIGÉ : Utilise 'consuming_density' (Canal 0)
+            consumption = CONSUMPTION_RATE * consuming_density * nutrient_factor * dt 
+            self.nutrients = np.clip(self.nutrients - consumption, 0.0, 1.5)           
             # Natural regeneration (like nutrient upwelling)
             self.nutrients = np.clip(
-                self.nutrients + NUTRIENT_REGEN_RATE * dt, 
+            self.nutrients + NUTRIENT_REGEN_RATE * dt, 
                 0.0, 1.5
             )
             
@@ -221,8 +223,8 @@ class Board:
             self.nutrients = self.diffuse_field(self.nutrients, NUTRIENT_DIFFUSION)
         
         if is_waste_enabled:
-            # Waste production from metabolism
-            waste_produced = WASTE_PRODUCTION_RATE * cell_density * dt
+            # CORRIGÉ : Utilise 'total_density' (Tous les canaux)
+            waste_produced = WASTE_PRODUCTION_RATE * total_density * dt 
             self.waste = np.clip(self.waste + waste_produced, 0.0, 1.5)
             
             # Natural decay (biological/chemical breakdown)
@@ -235,10 +237,12 @@ class Board:
             self.waste = self.diffuse_field(self.waste, WASTE_DIFFUSION)
             
             # Waste toxicity inhibits growth (gentler exponential)
-            # Much less punishing: even at max waste (1.0), still 40% growth
-            waste_factor = 0.4 + 0.6 * np.exp(-2.0 * self.waste)  # (was exp(-4W))
+            waste_factor = 0.4 + 0.6 * np.exp(-2.0 * self.waste)
         
         return nutrient_factor, waste_factor
+    # #################################################################
+    # # --- FIN DU BLOC CORRIGÉ 1 ---
+    # #################################################################
     
     def update_signals(self, cell_density, dt=1.0, is_enabled=True):
         """
@@ -410,8 +414,6 @@ class Board:
             )
         if hasattr(self, 'heat_sources'):
             self.temperature += self.heat_sources * dt
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-========
     
     def get_adaptive_growth_modulation(self):
         """
@@ -443,7 +445,6 @@ class Board:
         modulation[flee_zones] *= 0.6
         
         return modulation
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
 
     @classmethod
     def from_data(cls, data):
@@ -798,7 +799,7 @@ class Automaton:
     4: lambda n, m, s: np.exp( - (n-m)**2 / (1.5 * s**2) ) * 2.2 - 1,  # Faster, sharper response
 }
 
-    def __init__(self, world):
+    def __init__(self, world, use_gpu=True):
         self.world = world
         self.world_FFT = [np.zeros(world.cells[0].shape) for c in CHANNEL]
         self.potential_FFT = [np.zeros(world.cells[0].shape) for k in KERNEL]
@@ -825,13 +826,15 @@ class Automaton:
         self.is_nutrients_enabled = True  # Nutrient depletion flag (ENABLED BY DEFAULT)
         self.is_waste_enabled = True  # Waste production flag (ENABLED BY DEFAULT)
         self.is_signals_enabled = True  # Chemical signals flag (ENABLED BY DEFAULT)
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-========
         self.is_behavior_enabled = True  # Adaptive behaviors flag (ENABLED BY DEFAULT)
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
+        self.gpu_api = self.gpu_thr = self.gpu_fft1 = self.gpu_fftn = self.gpu_fftshift = None
         self.is_gpu = False
         self.has_gpu = True
-        self.compile_gpu(self.world.cells[0])
+        if use_gpu:
+         self.compile_gpu(self.world.cells[0])
+        else:
+            self.has_gpu = False
+            self.is_gpu = False
         self.calc_kernel()
 
     def kernel_shell(self, R, model, params):
@@ -889,7 +892,6 @@ class Automaton:
 
     def compile_gpu(self, A):
         ''' Reikna: http://reikna.publicfields.net/en/latest/api/computations.html '''
-        self.gpu_api = self.gpu_thr = self.gpu_fft1 = self.gpu_fftn = self.gpu_fftshift = None
         try:
             self.gpu_api = reikna.cluda.any_api()
             self.gpu_thr = self.gpu_api.Thread.create(interactive=args.G)
@@ -919,26 +921,38 @@ class Automaton:
     # def fftshift(self, A): return self.run_gpu(A, np.fft.fftshift, self.gpu_fftshift, np.float32)
     def fftshift(self, A): return np.fft.fftshift(A)
 
+    # #################################################################
+    # # --- DÉBUT DU BLOC CORRIGÉ 2 ---
+    # #################################################################
     def calc_once(self, is_update=True):
         A = self.world.cells
         R, T, P = [self.world.model[k] for k in ('R', 'T', 'P')]
         dt = 1 / T
         gfunc = Automaton.growth_func[self.world.model.get('gn')]
         
-        # Calculate total cell density across all channels for environmental effects
-        cell_density = sum(A[c] for c in CHANNEL) / len(CHANNEL)
+        # --- DÉFINITION DES DENSITÉS ---
+        if isinstance(A, list):
+            # Mode multi-canaux (pour l'évolution)
+            consuming_density = A[0] # Seul C0 (Bouche) est utilisé pour la consommation
+            total_density = sum(A[c] for c in CHANNEL) / len(CHANNEL)
+        else:
+            # Mode canal unique (pour que les simulations normales fonctionnent)
+            consuming_density = A
+            total_density = A
+        # --- FIN ---
         
         # === ENVIRONMENTAL DYNAMICS ===
         # Update temperature field and get temperature-dependent growth factor
         temp_factor = self.world.update_temperature(
-            cell_density, 
+            total_density, 
             dt=dt, 
             is_enabled=self.is_temperature_enabled
         )
         
         # Update nutrients/waste and get their effects on growth
         nutrient_factor, waste_factor = self.world.update_nutrients_and_waste(
-            cell_density,
+            consuming_density, # 'cell_density' dans la fonction, mais 'consuming_density' ici
+            total_density,     # 'total_density' (nouvel argument)
             dt=dt,
             is_nutrients_enabled=self.is_nutrients_enabled,
             is_waste_enabled=self.is_waste_enabled
@@ -946,7 +960,7 @@ class Automaton:
         
         # Update chemical signals and get their effect on growth
         signal_factor = self.world.update_signals(
-            cell_density,
+            total_density,
             dt=dt,
             is_enabled=self.is_signals_enabled
         )
@@ -955,10 +969,6 @@ class Automaton:
         if is_update and (self.is_nutrients_enabled or self.is_temperature_enabled):
             self.world.apply_environmental_features(dt=dt)
         
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-        # Combined environmental factor
-        env_factor = temp_factor * nutrient_factor * waste_factor * signal_factor
-========
         # Get adaptive behavioral modulation
         if self.is_behavior_enabled:
             behavior_modulation = self.world.get_adaptive_growth_modulation()
@@ -967,10 +977,12 @@ class Automaton:
         
         # Combined environmental factor (including behavioral adaptation)
         env_factor = temp_factor * nutrient_factor * waste_factor * signal_factor * behavior_modulation
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
         
         # === STANDARD LENIA CALCULATION ===
         self.world_FFT = [self.fftn(A[c]) for c in CHANNEL]
+    # #################################################################
+    # # --- FIN DU BLOC CORRIGÉ 2 ---
+    # #################################################################
         D = [np.zeros(A[c].shape) for c in CHANNEL]
         if not is_free_h: Dn = [0 for c in CHANNEL]
         
@@ -1091,6 +1103,9 @@ class Analyzer:
                 # self.shape_major_axis, self.shape_minor_axis,
                 # self.shape_eccentricity, self.shape_compactness, self.shape_rotate]
 
+    # #################################################################
+    # # --- DÉBUT DU BLOC CORRIGÉ 3 ---
+    # #################################################################
     def __init__(self, automaton):
         self.automaton = automaton
         self.world = self.automaton.world
@@ -1102,6 +1117,9 @@ class Analyzer:
         self.object_distance = 0.2 if CN==1 else 0.6
         self.make_border_mask()
         self.reset()
+    # #################################################################
+    # # --- FIN DU BLOC CORRIGÉ 3 ---
+    # #################################################################
 
     def make_border_mask(self):
         A = self.world.cells[0]
@@ -2642,6 +2660,279 @@ class Lenia:
         elif self.search_algo in [1, 2, 3]:
             self.world.names = {'code':new_code+'<'+prev_code, 'name':'', 'cname':''}
         elif self.search_algo in [4, 5, 6]:
+             self.backup_world()
+             self.leaderboard = [{'fitness':float('-inf'), 'world':None} for i in range(self.leaderboard_size)]
+             self.automaton.reset()
+             self.analyzer.reset()
+             self.search_stage = 2  # quick start
+                # self.analyzer.trim_segment = 0
+                # self.stats_x_name = 's'
+        else:
+            self.is_auto_center = True
+            self.is_auto_load = True
+
+    def finish_search(self):
+        if self.search_mode == 0:
+            if self.search_algo in [0, 1, 2, 3]:
+                # self.update_lineage()
+                self.append_found_file_text('\n')
+                self.read_found_animals()
+            elif self.search_algo in [4, 5, 6]:
+                self.append_found_file_leaderboard()
+                self.append_found_file_text('\n')
+                self.read_found_animals()
+            self.search_back = None
+            self.search_back2 = None
+        self.search_mode = None
+        self.search_stage = 0
+
+    def do_search(self):
+        global STATUS
+        s = 's+' if self.is_search_small else ''
+        test_long = self.search_algo in [1] or (self.search_algo in [3] and self.breadth_count == 3)
+        test_short = self.search_algo in [2] or (self.search_algo in [3] and self.breadth_count < 3)
+        test_vshort = self.search_algo in [0]
+        if self.search_mode == +1:
+            if self.analyzer.is_empty: self.key_press_internal(s+'w')
+            elif self.analyzer.is_full: self.key_press_internal(s+'q')
+        elif self.search_mode == -1:
+            if self.analyzer.is_empty: self.key_press_internal(s+'a')
+            elif self.analyzer.is_full: self.key_press_internal(s+'s')
+        elif self.search_mode == 0:
+            if self.markers_mode in [1,3,5,7]:
+                is_finish = self.analyzer.is_empty or self.analyzer.is_full or \
+                        not (self.analyzer.object_num == -1 or 5 <= self.analyzer.object_num <= 10)
+            else:
+                is_finish = self.analyzer.is_empty or self.analyzer.is_full
+            if is_finish:
+                self.is_show_search = True
+                self.search_stage = 1
+                self.search_total += 1
+                if self.search_algo in [0]:
+                    self.random_params()
+                    self.random_world()
+                elif self.search_algo in [1, 2, 3]:
+                    self.restore_world()
+                    self.random_params(is_incremental=True)
+                    if self.search_algo in [1]:
+                        self.search_back2 = None
+                elif self.search_algo in [4, 5, 6]:
+                    self.mutate_world_from_leaderboard()
+            elif test_long and self.automaton.gen >= 500 and self.search_stage == 1:
+                self.is_show_search = True
+                self.search_stage = 2
+                self.backup_world(i=2, is_reset=False)
+            elif (test_vshort and self.automaton.gen >= 250) or \
+                 (test_short and self.automaton.gen >= 500) or \
+                 (test_long and self.automaton.gen >= 750):
+                self.is_show_search = True
+                self.search_stage = 1
+                self.search_total += 1
+                self.search_success += 1
+                if test_long:
+                    self.restore_world(i=2)
+                    self.search_back2 = None
+                # self.update_lineage()
+                self.append_found_file()
+                if self.search_algo in [0]:
+                    self.random_params()
+                    self.random_world()
+                elif self.search_algo in [1]:
+                    self.random_params(is_incremental=True)
+                    self.backup_world()
+                elif self.search_algo in [2]:
+                    self.restore_world()
+                    self.random_params(is_incremental=True)
+                elif self.search_algo in [3]:
+                    if self.breadth_count == 3:
+                        self.random_params(is_incremental=True)
+                        self.backup_world()
+                        self.breadth_count = 0
+                    else:
+                        self.restore_world()
+                        self.random_params(is_incremental=True)
+                        self.breadth_count += 1
+            elif self.search_algo in [4, 5, 6] and self.automaton.gen >= 200 and self.search_stage == 1:
+                self.is_show_search = True
+                self.search_stage = 2
+                self.automaton.reset()
+                self.analyzer.reset()
+            elif self.search_algo in [4, 5, 6] and self.automaton.gen >= 200 and self.search_stage == 2:
+                self.is_show_search = True
+                self.search_stage = 1
+                self.search_total += 1
+                # self.update_lineage()
+                self.append_found_file()
+                self.put_world_in_leaderboard()
+                self.mutate_world_from_leaderboard()
+            elif self.automaton.gen % 50 in [0, 5, 10]:
+                self.is_show_search = True
+
+            if self.is_show_search:
+                if self.search_algo in [0, 1, 2, 3]:
+                    STATUS.append("{success} found in {trial} trials ({algo}), saving to {path}".format(success=self.search_success, trial=self.search_total, algo=self.get_value_text('search_algo'), path=self.FOUND_ANIMALS_PATH))
+                elif self.search_algo in [4, 5, 6]:
+                    STATUS.append("{leader1:.3f}, {leader2:.3f}, {leader3:.3f} leading in {trial} steps ({algo})".format(stat=self.stats_x_name, leader1=self.leaderboard[0]['fitness'], leader2=self.leaderboard[1]['fitness'], leader3=self.leaderboard[2]['fitness'], trial=self.search_total, algo=self.get_value_text('search_algo')))
+
+
+    def set_ammonia_environment(self, enable=True):
+        # Switch between water and ammonia simulation parameters
+
+        # Ammonia environment features:
+        # - Lower viscosity (2.5x less than water) → faster diffusion
+        # - Higher molecular mobility → faster reactions
+        # - Cold environment (-20°C to -25°C) → different growth patterns
+        # - Multiple chemical channels for NH₃ chemistry
+
+        if enable:
+            # Switch TO ammonia environment
+            STATUS.append("> Switching to NH₃ environment (2 atm, -20°C)")
+
+            # Store current water parameters if this is the first switch
+            if self.water_params_backup is None:
+                self.water_params_backup = {
+                    'model': copy.deepcopy(self.world.model),
+                    'params': copy.deepcopy(self.world.params),
+                    'growth_func': self.world.model.get('gn', 1)
+                }
+                # Only backup rings if they exist
+                if 'rings' in self.world.params[0]:
+                    self.water_params_backup['rings'] = copy.deepcopy(self.world.params[0]['rings'])
+
+            # Apply ammonia parameters to model
+            self.world.model.update({
+                'R': AMMONIA_R,      # Larger interaction radius
+                'T': AMMONIA_T,      # Faster time scaling (higher mobility)
+                'gn': 2              # Use ammonia growth function (Exponential)
+            })
+
+            # Apply ammonia parameters to all kernels
+            for k in KERNEL:
+                self.world.params[k].update({
+                    'm': AMMONIA_M,  # Lower optimal potential (cold environment)
+                    's': AMMONIA_S,  # Narrower growth width
+                    'rings': [AMMONIA_RING.copy()]  # Wider kernel for faster diffusion
+                })
+
+            # Update names to reflect ammonia environment
+            original_name = self.world.names.get('name', '')
+            if 'ammonia' not in original_name.lower():
+                self.world.names['cname'] = f"NH₃ env: {self.world.names.get('cname', '')}"
+
+            self.is_ammonia = True
+
+        else:
+            # Switch BACK to water environment
+            if self.water_params_backup is not None:
+                STATUS.append("> Switching to water environment")
+
+                # Restore backed up water parameters
+                backup = self.water_params_backup
+                self.world.model.update(backup['model'])
+                self.world.params = copy.deepcopy(backup['params'])
+
+                # Restore original name
+                if self.world.names.get('cname', '').startswith('NH₃ env:'):
+                    self.world.names['cname'] = self.world.names['cname'][8:].strip()
+
+                self.is_ammonia = False
+            else:
+                STATUS.append("> No water parameters backup found")
+                return
+
+        # Critical: recalculate the kernel with new parameters
+        self.automaton.calc_kernel()
+
+        # Reset simulation state
+        self.automaton.reset()
+        self.analyzer.reset()
+
+        # Update display
+        self.info_type = 'params'
+        self.update_menu()
+
+    def toggle_environmental_features(self, temp=None, nutrients=None, waste=None, signals=None):
+        """Toggle environmental simulation features on/off"""
+        if temp is not None:
+            self.automaton.is_temperature_enabled = temp
+            self.is_temperature_enabled = temp
+            status = "enabled" if temp else "disabled"
+            STATUS.append(f"> Temperature dynamics {status}")
+        
+        if nutrients is not None:
+            self.automaton.is_nutrients_enabled = nutrients
+            status = "enabled" if nutrients else "disabled"
+            STATUS.append(f"> Nutrient dynamics {status}")
+        
+        if waste is not None:
+            self.automaton.is_waste_enabled = waste
+            status = "enabled" if waste else "disabled"
+            STATUS.append(f"> Waste dynamics {status}")
+        
+        if signals is not None:
+            self.automaton.is_signals_enabled = signals
+            status = "enabled" if signals else "disabled"
+            STATUS.append(f"> Chemical signals {status}")
+        
+        self.info_type = 'params'
+    
+    def setup_environmental_scenario(self, scenario='default'):
+        """
+        Set up interesting environmental scenarios
+        
+        Available scenarios:
+        - 'default': uniform environment
+        - 'vents': nutrient vents and cold zones (hydrothermal vents on ice moon)
+        - 'gradient': temperature gradient (hot to cold)
+        - 'islands': nutrient islands in desert
+        """
+        if scenario == 'vents':
+            self.world.setup_environmental_features(num_vents=3, num_cold_zones=2)
+            STATUS.append("> Set up hydrothermal vent scenario")
+        
+        elif scenario == 'gradient':
+            # Create temperature gradient
+            if DIM == 2:
+                gradient = np.linspace(200, 220, SIZE[1])
+                self.world.temperature = np.tile(gradient[:, np.newaxis], (1, SIZE[0]))
+            STATUS.append("> Set up temperature gradient")
+        
+        elif scenario == 'islands':
+            # Create nutrient islands
+            self.world.nutrients *= 0.2  # Low baseline
+            num_islands = 5
+            for _ in range(num_islands):
+                if DIM == 2:
+                    x, y = np.random.randint(0, SIZE[0]), np.random.randint(0, SIZE[1])
+                    radius = 25
+                    y_grid, x_grid = np.ogrid[:SIZE[1], :SIZE[0]]
+                    mask = (x_grid - x)**2 + (y_grid - y)**2 <= radius**2
+                    self.world.nutrients[mask] = 1.0
+            STATUS.append("> Set up nutrient island scenario")
+        
+        elif scenario == 'default':
+            # Reset to uniform
+            self.world.nutrients = np.ones(SIZE)
+            self.world.waste = np.zeros(SIZE)
+            self.world.temperature = np.full(SIZE, 210.0)
+            STATUS.append("> Reset to uniform environment")
+        
+        self.info_type = 'info'
+
+    def clean_code(self, code):
+        if '<' in code:
+            return code.split('<')[0]
+        else:
+            return code
+
+    def update_lineage(self, name='', cname=''):
+        new_code = self.random_code(size=6)
+        prev_code = self.clean_code(self.world.names['code'])
+        if self.search_algo in [0]:
+            self.world.names = {'code':new_code, 'name':'', 'cname':'seed:'+self.last_seed}
+        elif self.search_algo in [1, 2, 3]:
+            self.world.names = {'code':new_code+'<'+prev_code, 'name':'', 'cname':''}
+        elif self.search_algo in [4, 5, 6]:
             self.world.names = {'code':new_code+'<'+prev_code, 'name':name, 'cname':cname}
 
     def append_found_file(self, world=None, newline=',\n'):
@@ -2824,8 +3115,6 @@ class Lenia:
                         blue = np.clip(blue + signal_intensity, 0, 1)
                     
                     self.draw_world([red, green, blue], 0, 1, is_shift=True, markers=['marks','scale','grid','colormap','params'])
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-========
                 elif self.show_what==6:
                     # Behavioral states view
                     # Green = REST (high nutrients), Yellow = HUNT (low nutrients), Red = FLEE (high waste)
@@ -2870,7 +3159,6 @@ class Lenia:
                     blue = np.clip(blue, 0, 1)
                     
                     self.draw_world([red, green, blue], 0, 1, is_shift=True, markers=['marks','scale','grid','colormap','params'])
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
                 # elif self.show_what==4: self.draw_world(self.automaton.fftshift(np.log(np.abs(self.automaton.world_FFT))), 0, 5, markers=['colormap','params'])  #-10, 10
                 # elif self.show_what==5: self.draw_world(self.automaton.fftshift(np.log(np.abs(self.automaton.potential_FFT))), -20, 5, markers=['colormap','params'])  #-40, 10
                 # elif self.show_what==6: self.draw_world(grad, 0, 1, is_shift=True, markers=['marks','scale','grid','colormap','params'])
@@ -3744,11 +4032,7 @@ class Lenia:
         elif k in ['s+comma']  and not self.is_show_rgb(): self.colormap_id = (self.colormap_id - 1) % len(self.colormaps)
         elif k in ['s+period'] and self.is_show_rgb(): self.shift_channel(+1)
         elif k in ['s+comma']  and self.is_show_rgb(): self.shift_channel(-1)
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-        elif k in ['tab', 's+tab']: self.show_what = (self.show_what + inc_or_dec) % 6
-========
         elif k in ['tab', 's+tab']: self.show_what = (self.show_what + inc_or_dec) % 7
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
         elif k in ['quoteleft', 's+quoteleft']: self.set_show(inc_or_dec); self.info_type = 'params'
         elif k in ['s+c+tab']: self.show_what = 0; self.show_group = 0; self.show_kernel = 0; self.colormap_id = 0; self.channel_group = 0; self.channel_shift = 0; self.info_type = 'channel'
         # elif k in ['c+tab', 's+c+tab']: self.show_what = (self.show_what + inc_or_dec) % 8
@@ -3802,10 +4086,7 @@ class Lenia:
         elif k in ['s+c+n']: self.automaton.is_nutrients_enabled = not self.automaton.is_nutrients_enabled; STATUS.append(f"> Nutrients {'enabled' if self.automaton.is_nutrients_enabled else 'disabled'}")  # Toggle nutrients
         elif k in ['s+c+w']: self.automaton.is_waste_enabled = not self.automaton.is_waste_enabled; STATUS.append(f"> Waste {'enabled' if self.automaton.is_waste_enabled else 'disabled'}")  # Toggle waste
         elif k in ['s+c+s']: self.automaton.is_signals_enabled = not self.automaton.is_signals_enabled; STATUS.append(f"> Signals {'enabled' if self.automaton.is_signals_enabled else 'disabled'}")  # Toggle signals
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-========
         elif k in ['s+c+b']: self.automaton.is_behavior_enabled = not self.automaton.is_behavior_enabled; STATUS.append(f"> Adaptive behaviors {'enabled' if self.automaton.is_behavior_enabled else 'disabled'}")  # Toggle adaptive behaviors
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
         elif k in ['n']: self.show_nutrients_overlay = not self.show_nutrients_overlay; STATUS.append(f"> Nutrient overlay {'visible' if self.show_nutrients_overlay else 'hidden'}")  # Toggle nutrient visualization
         #shift [c+arrow/pg]
         elif k in ['left',  's+left' ]: self.tx['shift'][X_AXIS] -= inc_10_or_1; self.transform_world()
@@ -4055,11 +4336,7 @@ class Lenia:
             obj = getattr(obj, n)
         return obj
     def get_value_text(self, name):
-<<<<<<<< HEAD:Python/Lenia_Ammonia_V2/Lenia_Ammonia_V2(pheromon).py
-        show_what_names = ["World","Potential","Field","Kernel","Objects","Nutrients"]
-========
         show_what_names = ["World","Potential","Field","Kernel","Objects","Nutrients","Behaviors"]
->>>>>>>> d64bdb639f17b0d9a40b71d03d92dc801ef18fba:Python/Lenia_Ammonia_V2_comportements.py
         if name=='animal': return '#'+str(self.animal_id+1)+' '+self.world.long_name()
         elif name=='kn': return ["Polynomial","Exponential","Step","Leaky Exponential"][self.world.model.get('kn') - 1]
         elif name=='gn': return ["Polynomial","Exponential","Step"][self.world.model.get('gn') - 1]
