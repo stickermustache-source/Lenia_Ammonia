@@ -1,46 +1,260 @@
 {
-    "code": "QNVCXV<YV9CKQ",
+    "code": "YTS7AK<2SBLAQ",
     "name": "",
-    "cname": "seed:C9EFB55A",
+    "cname": "seed:DC678199",
     "settings": {},
     "model": {
-        "R": 31,
-        "T": 1,
+        "R": 20,
+        "T": 2,
         "P": 0,
         "kn": 1,
         "gn": 1
     },
     "params": [
         {
-            "b": "1",
-            "m": 0.289,
-            "s": 0.0312,
-            "h": 0.22,
+            "b": "1,5/6",
+            "m": 0.231,
+            "s": 0.0565,
+            "h": 0.94,
             "r": 1,
             "c0": 0,
             "c1": 0,
             "rings": [
                 {
+                    "r": 0.7,
+                    "w": 0.67,
+                    "b": 0.07
+                },
+                {
+                    "r": 0.54,
+                    "w": 0.89,
+                    "b": 0.42
+                },
+                {
+                    "r": 0.92,
+                    "w": 0.03,
+                    "b": 0.72
+                }
+            ]
+        },
+        {
+            "b": "2/3,1",
+            "m": 0.317,
+            "s": 0.0878,
+            "h": 0.12,
+            "r": 1,
+            "c0": 0,
+            "c1": 1,
+            "rings": [
+                {
+                    "r": 0.12,
+                    "w": 0.35,
+                    "b": 0.62
+                },
+                {
+                    "r": 0.72,
+                    "w": 0.23,
+                    "b": 0.97
+                },
+                {
                     "r": 0.21,
-                    "w": 0.88,
+                    "w": 0.42,
                     "b": 0.51
+                }
+            ]
+        },
+        {
+            "b": "1",
+            "m": 0.458,
+            "s": 0.1193,
+            "h": 0.66,
+            "r": 1,
+            "c0": 0,
+            "c1": 2,
+            "rings": [
+                {
+                    "r": 0.87,
+                    "w": 0.13,
+                    "b": 0.63
                 },
                 {
-                    "r": 0.1,
-                    "w": 0.72,
-                    "b": 0.14
+                    "r": 0.71,
+                    "w": 0.78,
+                    "b": 0.07
                 },
                 {
-                    "r": 0.79,
-                    "w": 0.25,
-                    "b": 0.98
+                    "r": 0.05,
+                    "w": 0.85,
+                    "b": 0.15
+                }
+            ]
+        },
+        {
+            "b": "3/4,1/2,1",
+            "m": 0.24,
+            "s": 0.031,
+            "h": 0.53,
+            "r": 1,
+            "c0": 1,
+            "c1": 0,
+            "rings": [
+                {
+                    "r": 0.7,
+                    "w": 0.62,
+                    "b": 0.73
+                },
+                {
+                    "r": 0.24,
+                    "w": 0.93,
+                    "b": 0.35
+                },
+                {
+                    "r": 0.19,
+                    "w": 0.95,
+                    "b": 0.63
+                }
+            ]
+        },
+        {
+            "b": "1/3,1",
+            "m": 0.192,
+            "s": 0.0575,
+            "h": 0.62,
+            "r": 1,
+            "c0": 1,
+            "c1": 1,
+            "rings": [
+                {
+                    "r": 0.62,
+                    "w": 0.15,
+                    "b": 0.52
+                },
+                {
+                    "r": 0.24,
+                    "w": 0.36,
+                    "b": 0.36
+                },
+                {
+                    "r": 0.7,
+                    "w": 0.8,
+                    "b": 0.12
+                }
+            ]
+        },
+        {
+            "b": "1,11/12",
+            "m": 0.205,
+            "s": 0.0374,
+            "h": 0.35,
+            "r": 1,
+            "c0": 1,
+            "c1": 2,
+            "rings": [
+                {
+                    "r": 0.26,
+                    "w": 0.09,
+                    "b": 0.53
+                },
+                {
+                    "r": 0.75,
+                    "w": 0.77,
+                    "b": 0.37
+                },
+                {
+                    "r": 0.36,
+                    "w": 0.19,
+                    "b": 0.47
+                }
+            ]
+        },
+        {
+            "b": "1,1",
+            "m": 0.198,
+            "s": 0.0455,
+            "h": 0.17,
+            "r": 1,
+            "c0": 2,
+            "c1": 0,
+            "rings": [
+                {
+                    "r": 0.06,
+                    "w": 0.02,
+                    "b": 0.87
+                },
+                {
+                    "r": 0.08,
+                    "w": 0.6,
+                    "b": 0.89
+                },
+                {
+                    "r": 0.88,
+                    "w": 0.21,
+                    "b": 0.01
+                }
+            ]
+        },
+        {
+            "b": "1",
+            "m": 0.17,
+            "s": 0.0433,
+            "h": 0.74,
+            "r": 1,
+            "c0": 2,
+            "c1": 1,
+            "rings": [
+                {
+                    "r": 0.18,
+                    "w": 0.83,
+                    "b": 0.01
+                },
+                {
+                    "r": 0.08,
+                    "w": 0.46,
+                    "b": 0.15
+                },
+                {
+                    "r": 0.26,
+                    "w": 0.21,
+                    "b": 0.48
+                }
+            ]
+        },
+        {
+            "b": "7/12,1,1/6",
+            "m": 0.333,
+            "s": 0.0509,
+            "h": 0.22,
+            "r": 1,
+            "c0": 2,
+            "c1": 2,
+            "rings": [
+                {
+                    "r": 0.76,
+                    "w": 0.49,
+                    "b": 0.91
+                },
+                {
+                    "r": 0.09,
+                    "w": 0.33,
+                    "b": 0.27
+                },
+                {
+                    "r": 0.96,
+                    "w": 0.5,
+                    "b": 0.25
                 }
             ]
         }
     ],
     "cells": [
         [
-            "12.AsDvCwUyI3yOyEwJuTsWqRH14.$10.NuX13yOvVtJrBL11.$9.sB17yOyEuOsHpNA8.$8.sO21yOvSsFU7.$7.qN24yOuHqI6.$7.yL25yOwRqU5.$6.uT27yOxPqN4.$5.qK29yOwNpI3.$5.tG10yOyAwXwBvLvPwMxQyN12yOtQD2.$4.ExK8yOyFwMsE5.pLuFxK12yOqP2.$4.K8yOxMsX2.KpHpLpAE2.rLwMyK10yOuWC.$4.rP7yOwV2.NrQtQvAvDtUtFrXqKUsRwMyD10yOpS.$3.CtV6yOxA2.OtK7yOuXsMtLvAwJxV9yOsL.$3.G6yOyE3.tH10yOwCvAuTvLxN8yOxG.$3.qV6yO3.qW12yOxQtQrQtFxR8yOB$2.BuC5yOyD3.yB13yOuQpF.tM8yOS$2.L6yO3.qK15yOpX2.yA7yOpB$2.pT6yO3.uT15yOqA2.wH7yOP$2.sK6yO3.7yO2yM7yOpT2.uI7yO.$.CuA5yOrK2.I7yO2yL7yOpM2.tT7yO.$.G6yOrE2.J16yOV2.vA6yOyK.$.qX6yOsB2.tL16yO3.xQ6yOvS.$.uD6yOuBD.qU16yO3.6yOyM2.$DyN6yOwXpA2.wW14yOqD3.6yOxX2.$pEyM2yN5yOpV2.pRxP13yO3.qA5yOyNtE2.$sByIvXyB5yOsQQ2.pNwT11yOsS3.6yOxX3.$3.tW6yOqJ4.tHxP8yOvS3.rG5yOyNtO3.$4.xA5yOwPqK5.tSxIyM3yOxWtS3.pKyM5yOxU4.$4.JxX5yOwEqWK4.MtEvUwKuP4.pIxH5yOyKrU4.$5.rNyH6yOrOqPO10.rBxQ6yOwW5.$6.sMyI6yOxLsDsGrLqWqRqNqKqJqRrRtP7yOxV6.$7.rOyB9yOxTxBwSwRxCyF8yOyCrC6.$8.TxE21yOyCtE7.$10.tUxX18yOxWsU8.$12.uSxU14yOyMxIpP9.$14.sAwUyD10yOxUvG11.$17.sRwQxSyHyMyNyKyCxKvI13.$20.RrFsBqS16.!"
+            "14.LyM10yOyNpO11.yC4yOqW7.yN4yOsW10.qWyN12yOvKA44.$14.yM12yOyNA10.yN4yOA7.yN4yOrJ11.sDyN10yOwPB45.$14.yM12yOyNA10.yN4yOA7.yN4yOrJ11.sDyN10yOwPB45.$12.pKyN4yOtCB2ACqQyN4yOB9.xJ4yOyNA4.LyM4yOuUA13.2AOsKuIuVsNqRBA37.pSrAsMsApV5.$12.pUyN4yOsM2.2AqPyN4yOB9.xI5yOK4.pAyN4yOuGA16.rAtItWrIpH38.LqSrVtFsVqSKE3.$rO11.yM4yOBA5.CyL3yOyMC8.ByM4yO6yN4yOtIA18.2A38.rTyM10yNrO$sK10.WyN4yOA6.AyL4yOC9.yL14yOsF58.EtK11yOsK$yNA9.xW4yOsA7.rMyM4yOD9.CFyM11yOQA57.HyMyN11yOyN$yOR9.xT4yOsH7.rNyM4yOD11.xWyByE7yOyHwDA37.CA19.qFyN4yOyB2xPyHyM4yO$yOyNA8.AyN3yOyNyGC4.yByL4yOQ12.DC4ApBNH3A35.xNyM6yNrQ14.pMyM4yOpVB4AtB3yO$2yOwNA8.yN5yOyJyIvQvAyD5yOvMC57.TyM8yO2yNpL12.xT4yOuEA5.AwC2yO$2yOwSA8.vL6yOyMvVvEyI5yOvKC56.pBsFyN10yOsJ12.yN4yOsL7.vT2yO$2yOxVA8.2AyN5yOyNyM5yOpDD57.yMyN11yO2yNA10.yN4yOB7.wA2yO$2yOwAA10.wX12yOU57.pTyN4yOyDwOwJyD6yOJ10.yN4yOA7.xE2yO$2yOB11.2AEGJpSuPyMyOuVpJIG34.pFuDxWyNyIwBP16.vLyN4yOB5AuJ4yOyNA9.wP4yOxHA5.wG3yO$yOyHA16.VuGyLyOuRpBA34.pHuOyN4yOtTqHpD14.xT4yOyKA5.pJyN4yOA9.tT5yOqCG3.pNyN3yO$yOC18.E2HE34.pEyM2yN5yO4yNvQA10.pNyN4yOB7.yG4yOqG9.AwV4yO2yNyLyJ2yN4yO$yOA56.sUyN11yOyNW10.rDyN4yOA7.yN4yOpN10.qMyN13yO$sU56.sTyN13yOyNrF9.tK4yOtPA7.yN4yOA11.CyN11yOsU$A56.yM4yOvQB2AOwI5yOvQA8.AyN3yOyNA6.yM5yOA12.ARwP7yOuVCA$56.rCyN4yOqD4.AwA4yOyNA9.yN4yOqO5.pGyN4yOvXA14.AuKwT4yOxFB2.$32.qSxSyC3yDyC2yBvPF13.yM4yOB6.AyN4yOqB9.tL4yO7yN4yOtNB16.7A3.$32.qWyG5yO2yNwHSI11.TyN4yOA7.yN4yOqK9.AyN14yOB27.$30.sHxUyF8yOyMyDyCuKA9.vR4yOuWA7.yN4yOpF10.AxC12yOB28.$30.sOyJ12yOwPpC9.tN4yOuBA6.rFyN4yOA11.NxB10yOtUA28.$29.xLyG4yOqMRPQtByJ4yOxFA8.DyN3yOyNA5.pVyM4yOsG13.5AtGyMxHsSI2A29.$6.ApMqLrO19.yC5yOqAC2AsPyH5yOC9.yN4yOwQrD4.vX5yOB18.ApR2A32.$5.yM7yNyGwErA12.xDyN3yOwJXB3.FOyE4yOrK9.qLyN4yO2yNyKyLyN5yOpF55.$4.uU10yOwMW11.xS4yOwFI6.xX4yOsA10.xS13yOxSA55.$3.yMyN11yOyNyIA9.yB4yOpA7.yB4yOpG10.AMxL10yOwUB56.$2.qOyN5yOxK8yOQ9.yC4yOM7.yN4yOA12.AsXxC8yOB57.$.KyM4yOsUB4AyN4yOyNA8.yF4yOxPB4.pXxR4yOtE14.4ApJqRqAP2A36.yF4yNyLyFvJA13.$.tE4yOyNB5.pMyN4yOR8.yI5yOL4.rGyN4yOB59.vI8yOwXqT12.$.yM4yOB7.xL4yOtC8.UyN4yO2yNyCxVyGyN4yOB58.yEyN10yO2yNA10.$.yN3yOyBA7.yI4yOuEA8.yC13yOwPA58.yN13yOqI10.$.yN3yOvMA7.yN4yOpF9.AUqQuJ9yOwVB58.yK5yOvPqAqPyN5yOyNpR9.$.yN3yOwFA6.sLyN4yOA12.qKwVyI5yOxUvPrU58.sCyN4yOtWB2.AtO5yOtSA8.$.yN4yOsN5.tXyN4yOQ14.10A34.xFxQ2xUxTxDwUwEtM15.yK4yOqDA4.AMyN3yOyNA8.$.sMyN3yOyNyIsJEJvNyN4yOvBA56.wExO6yOyMyDxMwWwJA11.uT5yOH6.JyN4yOA8.$.HyN5yO3yN6yOX56.pFyF11yOyBtUA10.yB4yOxGJ5.BXyN4yOA8.$.JpXyN12yOqFU56.xP13yOyGvNA9.yD4yOpXP4.FpCtC5yOP8.$.pEqKuV11yOwIqOX55.tJyN4yOxMrRrIsIyN5yOyAA9.xV4yOsQpLWQJOpJqLyN5yOpTE7.$.DpBpUqQsItMvN5yOtFsFrKqIpBG33.EC19.yM4yOtTsArCqSrEsAsRyN4yOqE9.LyN3yOyNxIrBqGpXqFqXyM5yOrIpLE7.$4.DpCqArArMuUvAuArFqOpSWDB31.uDwFxMxLwVtKrN16.tU5yOtQsJqWqKrErNsXxN4yOyNA8.pDyN5yOyNxXtSuUyN6yOpJ9.$6.EPpBpLpIpDQG33.tXyHyN4yO2yNwVtJqS13.yM4yOwFuBsOrCqPrLsOuDvW5yOpC9.qOyN6yO2yN6yOqMA9.$46.SyN9yOyNxWuNA11.yN4yOxBuVtCrUrOsOuBwAyN5yOpD10.yN13yOrLO10.$45.XyM12yOyNwJA10.yN5yOwPuKtPtGtWwQyN6yOH10.pLsPuNyD8yOuVsPpI11.$45.sWyN14yOuDA9.yN6yOyNxNwXxV7yOrV12.EpCsAuDxG5yOtIqKJ12.$22.GHJI18.IyM15yOyKA9.rGyN15yOvJT14.GUrCrEsOrVqVpLT14.$20.CqEsIuWxOxJqRpL16.rLyN16yOpF9.NyN15yOsOA18.2A17.$19.pJwCxSyN3yOyCxRxEtUM13.yM17yOtVA9.tH14yOtKA38.$18.BtLyK8yOyHxRvDA11.yN16yOyHsR10.CxU13yOpH39.$18.sTyG11yOyJxHA10.yN16yOxLA11.qFuL9yOwJsIO33.EKNOD2.$17.JyC13yOyLxBA9.yL16yOwBA12.AqWuRxI3yOxUvXtKrBA33.pJsTuTuSvJtSrG.$xPO15.uQ15yOyAA9.uM15yOxRB15.ApJrBrErMqPpHA33.CqBvL3yNyO2yNxP$yOyNuEH13.yN16yOvNA8.AyN14yOpL57.pMxCyN7yO$2yO2yNpM11.QyN16yOwAA9.xV13yOxAA57.tByN8yO$4yOyNQ10.uF17yOvXA9.AwK11yOxDB34.RpQqGqJqDXJ17.yM9yO$5yOyNA9.uD17yOuXA10.AvL8yOxUrTB34.tBwJyGxVyDwMsIrJqHW14.pIyN9yO$6yOE9.AyN16yOB12.ApPuExSyBxWxPvMqRBA33.MuSyN5yO2yNuWrJpJ13.wM10yO$6yOA10.yN15yOxVA14.6A36.tVyF9yOyNuAS12.vRyM9yO$yF4yOyErS10.xQ15yOB57.wUyJ10yOyNuGA11.uXyJ4yOxQwNwCwQyF$wX4yOxAqB10.AxR12yOyIqR57.pJxF12yOxSA11.uSyE4yOwUuOuAvBwX$xG3yOyEuTA11.tKxH9yOyLxGuIA57.uUxW12yOyKvIA10.uExL4yOwPuCtJuGxG$yJ3yOwQsW12.AtCwMxLxUyDyKyJyGxWxGvLBA34.rMvUwQxHxPvHpRC16.vKyN4yOyFxHxW6yOwDA10.sVxB4yOxVvPuUwCyJ$3yOyIvGqN13.ALsLtPuKvAuXuRtSqSA35.tTwBxFxWyIyLyKyDwMpP14.qFwA4yOxNuItAtJvXyM4yOwQG10.qLwL5yOyEyByJyO$3yOxBsMA15.7A36.tMvTxU7yOxXxDA12.qAxA4yOuWqVSWrXxA4yOwJpA11.tExX8yO$2yOxNtKA58.sAvQxV9yOyNwDA11.pMxO3yOyEtBQ2.qIvT4yOvSA11.AuIyG7yO$yOwDtCA59.tUxP11yOxUsN11.JxD3yOxTsN3.rKwL4yOuAA12.SvBxU6yO$wXqEA59.qJvQ13yOvJA11.uK3yOyIuIpUBpUuFxT3yOyApT14.MsLuTwPxHxRxLwX$A40.qQsPsIqO17.sMxK3yOyMxB2vQxKyM4yOwEA11.tD4yOxOuXuLvCxB4yOuQA15.3ApCpDXA$39.rNvAxT2yNyMwTrJ15.uDyN3yOxFtSrVrKtCwQ4yOwSqT11.qBxL5yOyM6yOrS23.$38.uTyN6yOyNwSO12.HvJ3yOyGvJrRpFUqWuUyC3yOxCqE12.tB11yOwPA23.$37.uUyN9yOyBA11.pDwF3yOxUuFqB2.qPuUxX3yOwFA12.AuM9yOyKrU24.$36.tGyN11yOvHA10.UvR3yOxOuJqOLpJsIvSyD3yOuDA13.AsExC6yOwEpDA24.$35.UyM4yOyHxXyI6yOpB11.uS3yOyIwDtDsItEuVxByM3yOrX15.2AOrHtCtArVpKP26.$12.RsNuLvNuCpQ17.vP3yOxXsKBAqIuMyA4yOsL11.tN4yOyIxJwOwMxFyG3yOxHU19.ABA28.$10.SwJyM2yNyO2yNwTB14.JyN3yOtCA3.AtAyI3yOuLA10.pXwV12yOuRA50.$9.pTyM8yOyNqE13.sMyN2yOwLA5.pMwS3yOtXA11.rLyE11yOP51.$8.qWyM10yOyNpC11.QyD3yOuMA5.pJwE3yOrS13.sJwX8yOyLrQ52.$7.UyM5yOyM6yOxXpD10.pWyN3yOuCA5.rGwW3yOqK13.AKsDvVyI4yOvApNB52.$6.TyM4yOvNqKpDqDsSyD4yOqS10.rDyN3yOvWA5.uFyH3yOqS15.2AMpMpGpFVM38.GsEvBvSuOrA10.$5.QsXyN3yOtRB3.AqSxR3yOtUP8.MrPyN3yOyKvNqW2.LtBxD3yOyNqN59.KwXyMyN2yO3yNtND7.$4.NrVyN3yOvVA6.uF3yOxQrLP7.LqWuK5yOyAxCwRxFyA4yOuCqB57.EqXyM8yO2yNT6.$3.JqVvG4yOsB7.rLyD3yOuQqSQ7.KqSwS13yOsOpK56.LtUyN11yOwHpB5.$2.GpGsNxC3yOxUpL7.sGyN3yOvBrHS8.BrHyN11yOtNqRN55.OrQyN5yOxTyG6yOuRqBO3.$3.RsGwK4yOrS7.vJ3yOyKuHqR11.pWtH8yOuKrRpKD35.CpTqID16.MrMyM4yOtWB3AvC4yOyNuPqPUE.$4.qEvK4yOxHT5.sMyN3yOwTsNG12.2ApKrQtLsVrVrFqAOA34.BtCyM5yNwIpXM11.JqOvC4yOuCA4.AtF4yOxArQpA2.$5.tH5yOxUuJpT.pSsOxN4yOuDpS16.4A36.DpSyMyN7yO2yNrIpHL8.pStHyN3yOwXB6.AwR4yOsWpI2.$5.pItS5yO5yN4yOxBqO56.KrQyM11yOyAsKpUE6.FqXvL4yOtE8.vK4yOuIpA2.$6.pOuF13yOtCA55.FrCyM13yOyLsMpM6.ArIwU4yOrF8.xN4yOtGA2.$7.pQtW10yOwAsKH33.BUpGpDQ18.qIyM4yOxTrQBArOwQ5yOwXrD7.qHvT4yOsP7.sIyN3yOxBrE3.$8.AHqWyE5yOxVsSCA33.XqXsBwCyExUuCpTpDP13.OuB4yOyEB4.AtE5yOrW8.uU4yOyNpH5.qFyM4yOtUA3.$11.2AOqOpLF2A34.pHsNyMyN3yO3yNuEqKX11.rLyN4yOqR6.AwG4yOuGpH7.sFxX4yOyGtQX2.rBxV4yOwDpX4.$52.pIuPyN8yO2yNtOpF9.MuL4yOwIA7.uH4yOwCpI7.AtV5yO5yN5yOrGA4.$52.uGyN11yOyNtMpS8.pUwB4yOsV8.wC4yOvDA8.AtJ13yOtRA5.$51.rCyN13yOyNsTpA7.pEvJ4yOsU7.pCyN4yOsQ10.AtV10yOxJsSA6.$29.DI20.wJ4yOxSP2ApFuMyN4yOvKpV8.tK4yOyLA5.AwI4yOwMU11.AHqTwR6yOuHBA7.$27.qLtEvEyGyNxXrO16.sGyN4yOB4.BrSyM3yOwTqTC7.rKyN4yOxApTA2.CuPyN4yOsB15.3ApJpCB2A9.$26.sRyMyN4yO2yNwQqF13.xB4yOsK6.AvXyN2yOyNsWpG7.DuN5yO2yNxKxJyMyN4yOuLA32.$25.vByN9yOyNuVA10.qXyN4yOB7.vByN3yOsVV8.pQuR13yOxJB33.$24.sQyN12yOuIA9.tD4yOwQA7.wMyN2yOwUrWG8.ApXwB11yOwJpP34.$23.pMyM13yOyNsU9.rKyN3yOxNB6.qKyJ3yOvAqOA9.ApIsRxT8yOqPA35.$.pFpWT19.vQ5yOqMBACtB5yOyNA9.yN4yOrQA5.vTyN3yOtBP12.3AqIsN2tXrRpCB37.$rTyM3yNyMxHN14.qCyN4yOqOA3.2AyN4yOC9.wS4yOyMtXpVA2.tOyK3yOvTqOA16.4A38.rT$yI6yOyNyMqE12.xE4yOvWA6.vG4yOvBA8.pSyN4yOyMyJ3yHyL4yOsRD57.pMuEyI$9yOyNpG11.yN4yOP7.tX4yOvUA9.rJyN12yOvFqEA56.XxLyKyO$10yOyNA9.pRyN4yOA7.xG4yOtPA10.sQyN10yOvDrFC57.uPyM2yO$yOyMrAWtL6yOyNA9.yN4yOA6.pNyN4yOpS11.ACrJxM6yOxStEpDC57.tGyI3yO$yOB2.2AsJyN4yOA9.xS4yOxPA4.QyF4yOxNA13.BFHpPrMsBrGqGpAE36.tGyK2yNxTxGvJA14.pEyE4yO$wQA4.AuM4yOtC9.uJ5yOyNuApDJqAxI5yOqD17.A3CB36.pJyMyN6yOyNxGpB12.uUyM3yOwQ$qF6.pGyN3yOyNA8.AyN5yO4yN5yOvDA57.rLyM10yOyNqA10.qCyF4yOqF$I6.rIyN4yOA9.GyN12yOyJB58.yM12yOyNqSA8.sNyK3yOyMI$H6.xV4yOuPA10.rByN10yOuLB35.ISTG19.yM6yOwH7yOyLpI8.sQyK3yOyCH$sK5.rPyN4yOB12.AqTwR6yOxWPA34.QqBrQvWxPxJvKqGpD15.sJyN4yOqPB3AtR5yOvBC7.SyD4yOsK$yHA3.qKyM4yOuKA14.4AXB2A35.pCrQxVyFyL2yNyLyEyDvKqUA12.yM4yOuPA4.AtR4yOyDF8.vNyM3yOyH$yOyNyKyFyKyN5yOB57.pHtByA8yOyLyGtH11.qFyN4yOB6.AyN4yOqEA7.qExKyN3yO$10yOX57.OtGyB11yOyLsF10.uT4yOvWA7.yN4yOpD8.BrWyI3yO$9yOC58.qSxX5yOyL7yOyNA9.vL4yOsE7.rRyN3yOxHG9.EtEyJ2yO$yN6yOwGC58.pXxIyN3yOwRqNRQpFuLyL4yOxOA8.LyN3yOyNA6.yM4yOtJC10.GrRxCyN$PrFtAvEtNSDA37.rDwUyFxMvCqH15.FsVyH3yOxEXC2.AIsKyJ4yOA9.yN4yOvBA4.wV5yOI12.ENP$2.3A39.yMyN4yO2yNwSpS12.qQxAyN3yOrXD5.FwX4yOpC9.wX5yOyNwArAsRyM5yOsQ16.$42.qRyM9yOyNuRA9.KsQyF3yOwLP7.wA4yOpA9.AyN6yO2yN5yOxHA16.$42.yM11yOyNuDA8.pGtRyI3yOuNH7.yK4yOA10.FyN12yOE17.$41.yE13yOyNsA8.EsOyH3yOuMH6.rEyN4yOA11.pPyN9yOwEB18.$40.tByN4yOpTBAMtL5yOwOA8.rEyD3yOyJrQ6.xN4yOsG13.AGwK6yOVA19.$17.tFyM3yNyIuLA15.yM4yOsOA3.ACyN4yOA8.QvL4yOxVtIpO3.uQ5yOB15.3A2EDA21.$16.yMyN5yO3yNpA12.sLyN4yOB6.yN4yOsH9.qPyN4yO2yNxPxOyMyN4yOpH44.!"
+        ],
+        [
+            "128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$27.PpJpWqEqFqBpSpIUE91.$GpHpTqApUpDG9.CEFIK2LPpDqFrStFuEuPuQuMuFtVtKsTrUqNpD78.CJRUQH4.G$tKuVvJvUvWvHuJtBrJpTTKOpEpWqM2qSqP2qOqRrDsEtTvJwEwF2wCwEwH2wIwGwBvNuMsUqVpGE73.BpGqUsEtCtOtPtIsUsLsJsStK$xMyN4yO2yNyDxIwGvIvDvEvFvDuXuRuJuBtUtWuMvHvFtRsDrOrMrPrVsOtGtTuIuXvSwIwAuPsQqUpLL20.JR2VQJC19.BJSpBpIpOpUqBqGqHqGqCpSpCF9.SrTuNwHxCxLxPxJwVwKwFwJwUxM$vXwOwNwMwIwCvWvXwEwIwGvUvEuJtStLtOuAuKuRuTuQuJtHrKqRrLsGsMsFrSrHrAqRqLqKrCsSuXwGwBuUtFrMpXRB15.QqCrOsPtAsVsHrKqJpIMB14.DpCqRsJtSuOvAvFvIvMvQvSwAwEwDvMtTrQpK6.qWvCyFyNyLxXxOxFwPvWvGuUuVvJvX$uPvEvIvJvGvAuSuQuUvEvKvJvCuHtIsLrVrXsPtJtRtLsNrDqVsItPuFuKuM2uKuLuKuCtHsDqWqUsLuPwAwGvJtPrJpJF13.TqVtNvHvVvWvXvVvLuStOrXqEQ12.OrCuKxE2yNyGxBwBvMvPwGxBxSyI2yO2yNxRvFsOrHrDsNvOyEyKxPwVwG2wAwBvWvOvGuVuOuMuP$tOuPuTuSuPuMuKuIuCtStRuAuIuJ2uFtTsUsDsCsDrTrAqQrPsQsVsUsWtDtJtNtPtUuIvBvPvLuLtEsNtKvD2wLuPrQW12.SrBuHwGwLvRvHvKvXwOxBxDwPvGsQpP10.VtHyEyN3yOxJwDvKvFvMwEwWxNyCyLyMyNyOyMyJyGyKyGxSwUwEvLuMtTtNtQ2tVtKsRsArOrVsQtO$uAtStT2tUtXuEuLuSuUuJtLsRsLsNsVtFtLsUrQqVqJqCqLrDrHrCqWqX2rBqXqUqVrArBrKsPuJvQwEvTvBvIwJwIuEqSB10.NqXuTxKxDvV2vJvKvOvVwEwMwVxIxGvHrIA7.SuPyN3yO2yKxMwBuXuKuMvDvWwLwXxKxRxQxDwG2vTvRvKuVuIuDuEuCtStJtEtDtBsUsVtKuEuNuJuA$qJqKqG2qBqEqLqUrLsItMuCtTtAsDrQsBsSsRrUqOpSpMpRpSpLpDWUXpBpEqFsFtNuAtVtNtDtNuUwHwXwIvRwGvTtDpI9.HqRvFyIyCxGxDwJvJuSuRvDvRwGwNwOwRxKxOuDpO5.WvSyN2yO2yCyAxLwRvTvCuTuWvJvXwMwUwXwWwRwEvNvCuXvDvJvLvHuUuHtXtUtTtStQtLtFtCsTrWqSqHqJ$rSrGqNpXpUqEqRqVqNqCqEqVrTsOsXsTsArUsDrUqSpNRIC7.pXsLtBsUsStFuAvAvPvUwHwRwMvTwFvDrJ9.qFvCyNyOyNyMwXvQuXuRuUvC2vIvJvMwAwRxNyNyEtWpUMVsByM2yOyAxVxIxAwUwNvUuXuGtXuFuSvFvIvVwGwMwPwOwNwMwJvTvBuBsWrWrCqNqJqRrGrQrTrOrBqBpEpRrArS$qPqCpMpDpHqCrHsMtGtBsAqRpXqErGsMsXrXqUqHpKF10.pFrNrKrErPsFsStNuQvTwIwGwFvXvSwJtMpB7.pEuFyNyOyDyFyIxPwIuVtTtHtLuAuQvGvRwEwKwNxAyF5yNyOxRxAwLvOvAuVvDvIvEuOtXtKtFtLtXuNuXvFvHvE2vBvJwAwUxJxCvXuMtPsQrRqSqE2qBpVpHOTpWqOqP$7.IpLqRrSsKsQsMrWrQsIsMqUL12.VqHqPrXtEtKtLtTuFuNvBvNvMvFvHvXwKrG7.rUyNyOyBxXxOxSxEwAuVuHuEuIuTvJvSwBwKwRwOwFvPvUwNwVwKvRvFvMvNuQtOsWsUtAtCsUsKsDsGsStEtItEsVsNsErTrPrUsHtAtUuQvHvJuUuCtIsPsFrEpWpERF.BD2.$5.DpUqV2rJrBrArMsMtLtPsRrTqN13.LVqRsLsQsHsFsOtHuBuKuHtVtTtWuOxBvPR5.OwOyOyEyAxNxJxDxHwEuTtQtCtEtQuFuPuUvKvUvSvBuLuMuRuXvEvGuUuJuDtRtDsQsM2sLsJsErPqPpNUPSUQGA.AHVqArT2sWsKsDsG2sNrRqNpGD6.$5.XpNpKpLpXqXsEtBtGtEtLtKrTpPA11.J.AqSrSrPrTsEsLsStCtEsWsMsFsBsQuUyNtTA4.rPyNyOxXxPxCwWwVwGvIuGtHsOsWtJtUuGuLuNuKuBtIsOsFsGsOsXtEsUsArAqGpTpNpJpEpARA4.GMJB2.JXpCR2ESpNqIrErMrSsEsGrMpW7.$7.RpSqAqEqQrJsFtBtCsKrJpM5.VC7.KpIqPsGsRsJrWrSrXsDsArPrBqPrDsOwGyNtSA2.pWyMyOxUxIxAwLwDvRvHuOtPsQsEsGsPsUtE2tJtItEtAtCtMtXtWtKsVsErLqRpQL16.UqKrOrXrLpX3.LqBqTrBrIqXpC7.$7.UpCPVpXrFrWsArSrBpVpCJ2.qGrVrKrHpS7.CqJrJrHqVqNqKqMqNqIpVpOpVqNrBsNxF5yNyOxLxBwPwDvBuOuRuTuKtMsJrArBrDrNrXsArQrEqQqJqPrMsQtVuRuXuOtSsQrTqRpPK16.ApUrCrJqXqJpTpAPpHpXpNG8.$11.XqCqXrJqVpKE.COpVvJpVA.qHqT7.KqNsBsIsCrQrLrMrLrJ2rMrHrKrErOuI3yOwIuLuXvWvPuItHtAtFtLtNtGsQrWrDpX2pIpHUB3.HpOqXrXsKsJrQqQpWpQpRpTpKN15.GPQpEqLrRsDrGpKL10.$9.EpDqAqVrKrDpUC3.DtBxVA3.qGrX2.KpCKBSqLrFrDqQqFqBqEqIqPrArKrDqRqBpQqGrErLrVsStRtVtQsVrQqXrCrJrKrAqEpAA13.pCqNrHqRpQXVpJqBqDpG15.pAqJrArGrIrKrUsGrOV10.$11.PpOqNqTpO5.tXyNA4.vFqWqAqRqBpFXpMqOrMrDqDpEVpLqGqQqSqTqKpWpEORpNqFqUrLrPqWpUTC4.B12.MpIpMXF3.OpPpXpNpKpHD17.pAqXsNtJtDsErPqF10.$11.pDpTpXpMA5.qKyNA4.tNxBrOrBqPqGpUqKrMrUqVpLF.UqAqRqNqFpRpDLEQpTqTrKrTsFsHrUrBpXVF2.KVQ10.EqErLrXrIpO3.GpLpQQ19.UrAsDsHsIsKrNqNV3.NvVyMtUA.$K8.TpTqSrFrGqRpC6.yNxFA3.yMyOsOrQqW2qGqVsBsKrIpI3.pEpQpVpQXE2.VqVsNsDqRpXpDG6.C15.pCpRpNpLpVqCpJVXC20.MqRrRrVrNrHqTqKpJCRyMyOxO2yNK$yMA6.PpJpQqDqIqBpKI6.rNyNvSA.wTyOxNsOrSqOpQpRqQrXsXsUrIpME10.PrUsTtAsXrGQ20.HpOpKF2.pAqNrIqQQ21.QqO3rDqRqKqIqOpTvVyOrH2BtHyM$vWA2.TG.PqPrUsEsNsRsKrRqPpEB5.vC3yN2yOrVrTrLpVSVqBrJrLqKL13.2AqArVrOrFrBqFpA18.pFqQqXqWrGrKrErJrQpU22.pQrBrMqXqApFSUpPyNyOG2.AvW$pAqVJpVpQpOpIqDrOsNsIsCsErWrIqRqCpOpEVG2.ApFuKvBrJrNsAsBqB24.AHpWrUtBsXrCG19.pIrDsNtEsRrJpR22.PpTqHqIpTI3.yNyOA3.pA$.yMpMpBpIpApLqLrQsHrSrFrEqVqFpSpKpI2pFW4.AQ2qTpQG28.qJsNuFuArB17.AVqQ3rRrVrBpE5.pIwUtSC10.KpApGpTqKqQqCP4.xEyOA4.$.yNM3.BpGqOrDqXqRqOqGpPpHpGWVTK5.pDqCqSrGrApVC19.RpHQ4.DqMsRtXsH20.pWqUrDqKpNVG3.yMyNyO2yNtD9.PQHDGLM5.qCyNwKA3.$wBsM6.TpOpVpUpHM.RPFBA4.WqVsMtLsKqSpQK23.CMTN.UqPrHqB20.PpBXpBM4.rIyNwJBAyCyNtA10.2DCA7.yNwDuPsBuKwB$wTB7.HpOqLqDpHQJ9.pNrTsHsIsFrWqUL24.QpVqFpKSF21.BUN6.yMxMB2.AwCyNA20.rJxRuVuQuTwT$rM25.3ApSqFpWpUqAM24.RpF32.yNvBA3.AwHyMA20.qMqPrJrGrM$qD31.BWpLU21.L35.yMsT5.rHyNA21.qHpKpSqD$34.CX31.vNyMyNuMA21.sCrB5.JvSQ22.HI.$66.yMyFrIrJyLyNA20.pOqI6.tTpC25.$65.sNxNB2.AvJyMA19.pC7.AF25.$65.xStQA3.AvHuQA18.W34.$64.JuWrD5.AwJH19.pF7.E25.$64.JpHpX6.sXpJ20.pN6.pF25.$40.rMsR22.H.pC6.qGO21.pM5.H25.$38.qHtO2AuBxRL19.O8.pK.M21.UpFSpEO26.$37.pJ.A2.2AqG.J28.P52.$36.Q10.L17.JE8.S52.$36.O30.Q6.F53.$11.ATSO20.K12.R19.PS4.U53.$10.U6.M17.pL12.G20.EVW2T54.$9.U8.C15.A14.C78.$8.pW11.K13.pD14.pA78.$7.pT13.W11.pG15.pG78.$5.ApD15.pG7.DTpGG15.pG62.qBpOpPD12.$4.pDQ17.QpHpBpAXUTSL17.X60.qL7.pEJ8.$.GTN21.IKJD20.ApB57.SpE10.SpFW5.$50.PQ53.DQpIU15.ELH.$51.FP22.I26.HTXSV21.$53.T20.API7.SRHGNSXpEpG2pHpGpEXTQNHA25.$54.pCB18.KVUH3.LqI45.$54.FpGF16.KpApEpFpDpCpFpIpU46.$55.BpDW10.AEJOR2QNKPUH48.$58.S2pCpB2pCpARMF60.$62.ABC63.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$69.EH57.$128.$68.B59.$128.$128.$128.$128.$128.$128.$128.$128.!"
+        ],
+        [
+            "128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$59.FE67.$59.2D67.$128.$21.2B3.FIFA.C26.2A68.$19.JVpEpBPKNSpApEpIpR2qEpOR22.EGD68.$17.CpCpPpVpWpOpC2WpApEpMqCrIsHsJrRqQpORFA6.CB9.EOQK37.A23.FID.BD.$VLC13.EpLqI2qOqJpTpG2pEpDpEpOrFtDuJuMtUsPrLqHpSpPpOpNpLpIpCSLD9.NpCpFQ30.EKOPOP2QJB19.GRpBpEVQSWV$pOpJpEWL11.pGqNrTsGsErMqKpP2pKpJpLqKsMuPvUwAvJuEtAsFrSrMrJrHrEqUqGpJWMGDA4.ETpJpSpRWE7.EHGB17.DOXpH2pJpIpJpKpFUJ17.OpIpSpXpWpM2pGpLpO$qUqQqMqJqApKS7.BpAqFsFtPuBtPsMrHqOqFqDqEqMrSuAvWwSwUwBuVtPtBsSsNsKsHsDrRrDqKpMpBOGCBABGSpOqQrDqSpMTHA3.ELT2XVNB15.FRpEpOpXpWpUpWqCpWpNpCJ14.ESpPqVrPrTrEqKpXqAqHqU$sCtHtUuGuAsPqJpHKA.BISpLqIsFtVvEvSvBtKsErIqVqTrBrQtLvXxJxRxMwJvCtVtHtCsWsUsWsVsKrTrJqOpKPD4.DPpSrH2sErIqCpGTNMPUpIqAqJqMqHpKOD14.FTpIqDqPqQqNqOqVqXqOqApFL12.GSpUrXtTuOuKtGrWrFrErMsC$sPvLxK2yNxPvBsCqApPpOpRpXqRrVtDuLvRwMwNvUuOtGsHrUrSsAtFvSyE2yOyBwMvAtXtPtMtJtItKtJsXsLrWrCpNL7.pDqLrMsIsQsErIqOqBpVqAqKrArRsDsCrQqLTE14.JpFqIrCrMrNrJrKrUsFsCrQqVpOQE9.BNpOsRvOwVxKwQuWtIsJsCsEsP$tPxE5yOwNuItGtBtEtOuGvCwCwXxFwUwHvTvFuMtQtAsStHvGyM3yOyJwFuSuAtStQtOtMtOtQtOtFsIrCpMJ8.QpOqTsKtEsVsGrRrMrRsEsXtSuBtQsOqUVA13.APqGrVtAtKtFsRsPtFtXuFtUtArRqGXQNH6.EWrWvVyN3yOwKuJtJtBtEtP$uVyK6yOxNxAwVxBxKxXyM2yOyBwUvXvQvIuUuHtVtWuWxR4yOyMvVuRuF2uAtXtVuBuHuJuAsTqVpKI10.OqIrWsUtAsXtCtLuDuWvQvUvEtRrKpC14.DpJrWuGvRwCvFuBtQuIvRwSwRwAvDtTsFqRpRVLFDCBDOqOuXyN4yOxJvOuVuRuTuV$vT16yOxVwJvFuMuBtMtCtDuAwD6yOwHvFuSuN2uOuQvEvOvLuTtJrGpMH12.pPrOsVtWuWvQwKxDxSxVwWuWsPpP14.QrAuSxI2yOxQwCvGvLwRyF3yOyNyHwGtKqVpJV2UWpFqPuByN5yOyBwSwFvXvWvT$wQ16yOxMvStPrOqEpIpCpRrJuGyM5yOxUwVwDvQvSvXwIwUxFxIwOuJrUpS14.qDsFtXvIwHxExTyKyOyFwMuHrIN12.BpVuDyE4yOxUwXwPxDyI6yOyNvWtCrXrUsGsXuAwByN7yOxUxBwKwHwQ$xW16yOxNuVrHA5.pOuCyK6yOyI2xUyB5yOvWsFpJ14.pGsBuEvUxDyD4yOyMwTuIrBH11.MsBxH7yOyCyB9yOyNxQxPyD2yN10yOxEwBwExW$17yOxDtNN7.ErUvDyH13yOwLrPH14.pBsQvRyF8yOxPuTrJWC9.pWuNyN33yOyNwPvOwFyO$17yOwHrL9.2ArFwN12yOwHqM15.pGtXyF10yOyNwAsVrLqMpB6.ErVyJ31yOxTxPxIwKvEuQwByO$xU16yOvDpJ12.pUvQ11yOwHqF15.qVxA13yOyNwQtWrNpVpETLDNqOvO31yOwJuCsPrXrNrLsJuLxU$tU16yOuJN13.pDvJ10yOxJqU14.TuEyN15yOyNvRtFsIsEsGsNtNwLyN30yOwUsXW2A2.AqMtU$LwVyE14yOtWF14.qNxG10yOtD14.rEyJ18yO6yN32yOuLU7.L$.pVtJxV12yOyLtIA15.vB10yOwQqW12.FuB56yOxVrX9.$2.AtLyD11yOyFrW16.uS11yOvXqH11.pSyN36yOxOyK18yOwAV9.$3.AvD11yOyBrG16.vD12yOwPsDqHpG8.tN31yOyFwBvDuPuCtNtSvI18yOuAA9.$4.HwV10yOyCrM15.SxF13yOyNyHvHrRT5.rNyN30yOyBsVJ5AqKuHyM16yOsM10.$5.pTyH9yOyKsM15.qWyN16yOyKvDtDtGtVuSwDyL31yOuUA7.BtIxO15yOrX10.$6.vV10yOvEA14.tW19yO4yN32yOyMrU9.AqBsWwT12yOyHrF10.$6.uQ11yOqQ13.OxI55yOxEL11.ArKxI11yOxTpJ10.$6.vL11yOwHM12.qJyN35yOyF18yOyJuXA13.sAxT8yOyJxUwOA10.$6.xX12yOuAA11.vA31yOwUuTtJsIrXsOtWwN16yOxSsM14.ArOxFyL5yOyGxPwTvGA10.$5.pGxT12yOxStTpJ9.qMyD29yOyKuCO6AqBvOyM13yOyDwSqV16.tCwSyE3yOyLxSwUvRuHA10.$5.sAxHyC10yOyJxQwDuTuCqC6.rGwEyAyM27yOyHvNB8.KsVvUxXyJ9yOyFxNvMV16.AuPxFyDyMyNyExJwDvCtVT10.$5.uIwFxIxTyF7yOyHxVxGwUwMvVuWuE2tEtHtOtWvGwQxMxUyG25yOyIxUrS10.2AsUxHxWyGyL5yOyGxRwItUA17.tQwGxTyHyKyFxHwBvBuBsJ10.$5.tPvEwDwUxOyCyL4yOyJyBxKwWxBxIxCwLvWvRvMvIvHvJvQwJxDxNxUyEyKyN14yOyN2yK2yJ2yKyIyAxBA12.AtHwKxGxSyByI2yOyIxWwUuUrX18.tNwBxPyLyOyNxUwPvNuOtGqG9.$4.qLtCuJvFvWwRxKyByIyKyMyLyHxWxHxAxHxNxHwSwIvWvPvSwAwFwGwLwXxMxQxRxSxTxUxW3xXyAyGyN6yOyKyH2yGyFyEyBxUxDtRA13.AtCvJwKxFxVyFyHyCxFvOsXpQ17.UtUwCxP3yOyExDwBvBtXrQ9.$4.qMsHtTuRvLwFwXxNyAyJ2yNyHxV2xMxUxVxKwTwGvQvLvRwFwOwUxAxExGxCwNwCwBvGuJ2tOuUwDwTxRyEyJ2yKyMyLyIyGyFyCxVxRxKwWvRqL15.AsGuJvWxAxSyBxTwRuWrPA17.qFtPvWxJyK2yOyGxJwMvPuIsJpN8.$3.pRqXrWsXuBvCwDxBxRyG4yOyIyDyKyOyNxXxGwLvXvVwEwOxBxOxVxPwSvMsSB7AtHvLwLwXxHxQyC2yHyEyBxUxMxCwMvQtVA16.AsAuNwHxLyBxTwSuSrG18.pXsUvAwUyG2yOyKxUxGwIvBtHrA8.$2.QqTrUsIsVtTuXwFxIyH11yOxUxEwUwVxBxIxUyKyOyDwItEA8.2AsRtTuVwEwXxMxVyAxXxPwVwCvCtUrN18.qMtSwAxJ2yExHvJsEX17.pFsCuHwGxU3yOyJxWxIwIuTsQqMpA6.$UpApNrDsStNtUuKvLwPxOyJ11yOyMyAxUxVyByH3yOyLvQA11.2AqFtBuVwCxExSxTxHwKvDtMrSpE18.qEtQwExT2yOyLwXuDrE17.OrKtUwCxU5yOyKxTwLuUuCtMsCqJpLpFXU$pFqFqQrTtQvDvPvQvXwOxDxNxXyHyN9yOyN2yKyN4yOyMuGA14.QrUuAvRwXxKxCvVtXrQpG19.qJuDwPyK3yOyHwBtLqE17.qTtJvSxQ7yOxXxGxKwVvDtDrNqFpHpF$qFrMsMtOvDwMwWwFvH2uUuVuXuWuXvGwBxU6yOyNyKyJyN4yOxGqX16.AqGtOvRwXxAvTtQqT20.qQuKwVyN4yOwXuXsLW16.qFsXvKxL11yOxKvEtDrKqKqF$rXtAuJvUwWxJxCvPtFpE7AsGwJ5yOyKyGyEyI4yOuOA18.rBuQwWxNwLuCqU20.qUuFwNyB4yOxIvXuGrQ16.qGtFvUxW12yOwQuPtBsGrX$uBuSwHyAyLxKvNsTA8.2AsDwCyOyNyJyGyAxSyByK2yOxCqQ19.TtTxDyKxNvDrTB19.qXuAwBxLyL2yOyLxQwWvWuDrPpF13.JrGuHxA12yOyMxKvUuTuHuB$vQwTyG2yOwRqUA11.AUuMwVxOxPxLxHxMyCyHyGuHA20.tExCyOyLwEtKqD19.rEuBvVxBxXyDxX2xWxQxEwCuSuFtLrC10.WrAtLwDyK11yOyJyCxNwKvXvSvQ$wJyB3yOuVA14.AsAuJwHwQwRwWxJxOvVrC21.tOxX2yOyGvPtBqNJ17.rDtTvMwQxJxM2xIxLxPxUxDxCxUxOvJsDX7.pNsDuJwCxN3yOyJyGyFyEyFyL2yOyKyDxSxFwL2wDwJ$wAxTyIyNxBqD16.ApJtBvIvUwGwPwRtNA21.uUyIyNyKyDwQuMsVrQpL16.qVtIvCwFwXxB2wRwWxDxHxOyC2yLxMuIrGP3.UqFrJsVvFxBxLwUwGvUvIuWuPuKuMvMxP2xVxTxRxLwSwCvOvNwA$uUxBxTxWsXA18.PtEuVvPwDwCsG21.JuWxQxSxMxAvPuAtBsSsEqC15.qMtBuXwHwXwQwIwHwKwNwSxFxTxXxVxPvBsKqLpHpApLqVsXvAwMxKxOwHtLB7AXuCwLwTwXwQwFvMuTuMuU$tLvWwQuRA20.rGuIvHvSvPsD21.AuBwKwJvVvHtWsTsKsUtCsLrApJ13.qNtHvP2xFwVwNwLwMwNwRxCxKxIwUwHuOsOrGqTqVrKsRvDxV2yOwCqOA9.2ArAuKvFvAuRuBtKtL$sBuIuRqE21.pJtHuGuOuJrA22.sSvFvCuDtHsJrRrTsQtKtRuHuQsXpS10.LrHuIwSxLxIxBwSwPwOwPwVxFxHwRvUuStJrTrErFrPsMuDwQyByLyKsFA13.AqArXtBsUsFsB$qKsKqUA22.qQsDsOsHpJ22.rPtRtLsIrKqWqVrJsNtQuUwMxJvWtGrBpME6.WqUtEvIxCxBwQwJwDwAvXwCwNxAwXwGvBtLsBqQqHqLrDsMuLwDxHxSwCA16.AVqUqMqK$MpWA23.HqBqNqMpA22.qMsJsHqSpSpRpXqOrWtQvHwNxBwSuFrWqEXVpMqHqMqPqUsCtVuVvCuXuRuGtUtKtBsVtSvJwDwAvEuAsOqSpKUXpSrFtAuVwCwGqW20.JM$28.E24.pNrFrCpQWVpDpTrHtJvEwHwEvKtKrKpTXpCpXrAsLtJuAuVvLuPsMpK8AsPtLtCsNrHpRG3.pDrStSuTsCA22.$53.pIqSqNpLXUpCpWrNtMvAvPvHtTsBqKpJpCpKpUrHtGvIwQwNuTqWA9.3ApRpKK5.qAsArTA23.$53.pVrJqRqGpXpVqIrKtAuNvJvKuErWpRL.CQpPrCtGwDxBwOsOA21.NqAA24.$53.qVrGqVqNqJqNrIsTuNvUwFvJtGqDB4.GpWsOvBwBuWA49.$52.NpUpQWNPpHqMsIuNwBwIvMsWpO6.RrNtQuKrN50.$37.R22.pIsOuMuUuBrTpA7.qFrRqQA50.$37.D11.WF10.ApJ2rCpN8.ES52.$48.qLqP78.$48.SR78.$35.I92.$35.H92.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$128.$70.UJ7.G48.$70.H8.pCT47.$68.Q10.A48.$66.UpDA59.$64.IqSrBN60.$64.NqWrAB60.$64.HqBpS61.$65.pBB61.$128.$128.$128.$128.$128.$128.$128.$128.$128.$124.GU2.!"
         ]
     ]
 }
